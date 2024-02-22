@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "author": "Agostina Celina Venezia Napolillo",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -86.4, "left": -110.36, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -143.7, "left": 61.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:5V", "red", [ "v9.6", "h-48", "v-86.4", "h-144", "v220.8" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v76.8", "h-96", "v-96" ] ],
+    [ "dht1:SDA", "esp:15", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
