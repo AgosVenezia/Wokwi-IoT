@@ -1,8 +1,8 @@
 //Credenciales que tienen que copiar y pegar desde su
 //proyecto en Blynk.
-#define BLYNK_TEMPLATE_ID "TMPL2A4p0HgvP"
+#define BLYNK_TEMPLATE_ID "TMPL2TeM0uCdj"
 #define BLYNK_TEMPLATE_NAME "ESP32"
-#define BLYNK_AUTH_TOKEN "00oDR67gttDzSwGaz0mEz8piKXZXPbBn"
+#define BLYNK_AUTH_TOKEN "zXLGixnvoz5RvjG8N8NS_ebwdU8kv98a"
 
 #define BLYNK_PRINT Serial
 
