@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "author": "Agostina Celina Venezia Napolillo",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard-half",
+      "id": "bb1",
+      "top": 7.1,
+      "left": -217.1,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -48, "left": -302.36, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 235.5,
+      "left": -329.1,
+      "rotate": 270,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-hx711", "id": "cell1", "top": -55, "left": 98.6, "attrs": { "type": "5kg" } },
+    {
+      "type": "wokwi-hx711",
+      "id": "cell2",
+      "top": 60.2,
+      "left": 98.6,
+      "attrs": { "type": "5kg" }
+    },
+    {
+      "type": "wokwi-hx711",
+      "id": "cell3",
+      "top": 156.2,
+      "left": 98.6,
+      "attrs": { "type": "5kg" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "cell1:GND", "bb1:tn.25", "black", [ "h-240", "v-0.3" ] ],
+    [ "esp:GND.2", "bb1:tn.19", "black", [ "v0" ] ],
+    [ "bb1:5t.a", "esp:13", "green", [ "h0" ] ],
+    [ "cell1:VCC", "bb1:tn.20", "red", [ "h0", "v28.8" ] ],
+    [ "bb1:tn.20", "bb1:tp.20", "red", [ "h0" ] ],
+    [ "bb1:tn.3", "bz1:1", "purple", [ "h-0.1", "v65.6" ] ],
+    [ "esp:12", "bz1:2", "violet", [ "h-28.65", "v144", "h76.8" ] ],
+    [ "esp:3V3", "bb1:tp.24", "green", [ "h-28.65", "v-57.6", "h182.4", "v-9.6" ] ],
+    [ "esp:23", "cell1:DT", "green", [ "h268.8", "v-9.6" ] ],
+    [ "esp:22", "cell1:SCK", "blue", [ "h288", "v-9.6" ] ],
+    [ "cell2:GND", "bb1:tn.15", "black", [ "h0" ] ],
+    [ "cell2:DT", "esp:4", "green", [ "h0" ] ],
+    [ "bb1:tp.11", "cell2:VCC", "red", [ "h221.1", "v-11.2" ] ],
+    [ "bb1:tn.6", "cell3:GND", "black", [ "h0" ] ],
+    [ "esp:0", "cell2:SCK", "blue", [ "h0" ] ],
+    [ "esp:2", "cell3:DT", "green", [ "h38.4", "v76.8" ] ],
+    [ "esp:15", "cell3:SCK", "blue", [ "v0", "h28.8", "v76.8" ] ],
+    [ "bb1:tp.2", "cell3:VCC", "red", [ "h221.1", "v-20.8" ] ]
+  ],
+  "dependencies": {}
+}
